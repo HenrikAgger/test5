@@ -12,9 +12,9 @@ import javax.persistence.NamedQuery;
 @Entity
 @NamedQueries({
     @NamedQuery(name = "customer.deleteAllRows", query = "DELETE from customer"),
-    @NamedQuery(name = "customer.getAll", query = "SELECT from customer"),
-    @NamedQuery(name = "customer.getByName", query = "SELECT from customer"),
-    @NamedQuery(name = "customer.getByEmail", query = "SELECT from customer")
+    @NamedQuery(name = "customer.getAll", query = "SELECT c from customer c"),
+    @NamedQuery(name = "customer.getByName", query = "SELECT c from customer c"),
+    @NamedQuery(name = "customer.getByEmail", query = "SELECT c from customer c")
 })
 
 public class Customer implements Serializable {

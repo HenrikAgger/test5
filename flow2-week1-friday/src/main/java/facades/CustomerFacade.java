@@ -48,17 +48,17 @@ public class CustomerFacade {
 //    }
 
     
-    // Create a Customer
-    public Customer addCustomer(Customer customer){
-        try {
-            EntityManager em = emf.createEntityManager();
-                em.getTransaction().begin();
-                em.persist(customer);
-                em.getTransaction().commit();
-        } catch (Exception ex) {
-            ex.printStackTrace();
-        } return customer;
-    }
+//    // Create a Customer
+//    public Customer addCustomer(Customer customer){
+//        try {
+//            EntityManager em = emf.createEntityManager();
+//                em.getTransaction().begin();
+//                em.persist(customer);
+//                em.getTransaction().commit();
+//        } catch (Exception ex) {
+//            ex.printStackTrace();
+//        } return customer;
+//    }
     
     public List<Customer> getCustomerById(String name) {
         EntityManager em = emf.createEntityManager();
@@ -74,7 +74,7 @@ public class CustomerFacade {
         return em.createNamedQuery("Customer.getAll").getResultList();
     }
     
-    
+    public void 
     
     
 }
