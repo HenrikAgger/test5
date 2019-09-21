@@ -24,7 +24,7 @@ public class CustomerFacade {
      * @param _emf
      * @return an instance of this facade class.
      */
-    public static CustomerFacade getFacadeExample(EntityManagerFactory _emf) {
+    public static CustomerFacade getCustomerFacade(EntityManagerFactory _emf) {
         if (instance == null) {
             emf = _emf;
             instance = new CustomerFacade();
@@ -48,18 +48,19 @@ public class CustomerFacade {
 //    }
 
     
-//    // Create a Customer
-//    public Customer addCustomer(Customer customer){
+//    // add an order
+//    public Order addOrder(Order order){
 //        try {
 //            EntityManager em = emf.createEntityManager();
 //                em.getTransaction().begin();
-//                em.persist(customer);
+//                em.persist(order);
 //                em.getTransaction().commit();
 //        } catch (Exception ex) {
 //            ex.printStackTrace();
 //        } return customer;
 //    }
     
+    // Find a Customer
     public List<Customer> getCustomerById(String name) {
         EntityManager em = emf.createEntityManager();
             TypedQuery<Customer> tq = em.createNamedQuery("Customer.getByName", Customer.class);
@@ -74,7 +75,6 @@ public class CustomerFacade {
         return em.createNamedQuery("Customer.getAll").getResultList();
     }
     
-    public void 
     
     
 }

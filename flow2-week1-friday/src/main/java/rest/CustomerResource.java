@@ -11,8 +11,8 @@ import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 
 //Todo Remove or change relevant parts before ACTUAL use
-@Path("xxx")
-public class RenameMeResource {
+@Path("customer")
+public class CustomerResource {
 
     private static final EntityManagerFactory EMF = EMF_Creator.createEntityManagerFactory(
                 "pu",
@@ -20,7 +20,7 @@ public class RenameMeResource {
                 "dev",
                 "ax2",
                 EMF_Creator.Strategy.CREATE);
-    private static final CustomerFacade FACADE =  CustomerFacade.getFacadeExample(EMF);
+    private static final CustomerFacade FACADE =  CustomerFacade.getCustomerFacade(EMF);
     private static final Gson GSON = new GsonBuilder().setPrettyPrinting().create();
             
     @GET
@@ -28,14 +28,14 @@ public class RenameMeResource {
     public String demo() {
         return "{\"msg\":\"Hello World\"}";
     }
-    @Path("count")
-    @GET
-    @Produces({MediaType.APPLICATION_JSON})
-    public String getRenameMeCount() {
-        long count = FACADE.getRenameMeCount();
-        //System.out.println("--------------->"+count);
-        return "{\"count\":"+count+"}";  //Done manually so no need for a DTO
-    }
+//    @Path("count")
+//    @GET
+//    @Produces({MediaType.APPLICATION_JSON})
+//    public String getCustomersCount() {
+//        long count = FACADE.getCustomersCount();
+//        //System.out.println("--------------->"+count);
+//        return "{\"count\":"+count+"}";  //Done manually so no need for a DTO
+//    }
 
  
 }
